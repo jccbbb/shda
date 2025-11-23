@@ -1,0 +1,133 @@
+---
+interface Props {
+  title: string;
+  date: string;
+  location: string;
+  organizer: string;
+  description: string;
+  link?: string;
+}
+
+const { title, date, location, organizer, description, link } = Astro.props;
+---
+
+<article class="event-card">
+  <div class="event-date-badge">
+    <span class="event-date">{date}</span>
+  </div>
+
+  <div class="event-content">
+    <h3 class="event-title">{title}</h3>
+
+    <div class="event-meta">
+      <div class="event-meta-item">
+        <span class="event-meta-label">Location:</span>
+        <span class="event-meta-value">{location}</span>
+      </div>
+      <div class="event-meta-item">
+        <span class="event-meta-label">Organizer:</span>
+        <span class="event-meta-value">{organizer}</span>
+      </div>
+    </div>
+
+    <p class="event-description">{description}</p>
+
+    {link && (
+      <a href={link} target="_blank" rel="noopener noreferrer" class="event-link">
+        Event Details →
+      </a>
+    )}
+  </div>
+</article>
+
+<style>
+  .event-card {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: all var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .event-card:hover {
+    border-color: var(--color-accent-cyan);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+    transform: translateY(-4px);
+  }
+
+  .event-date-badge {
+    background: linear-gradient(135deg, var(--color-accent-orange) 0%, var(--color-accent-magenta) 100%);
+    padding: var(--spacing-md);
+    text-align: center;
+  }
+
+  .event-date {
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-bg-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .event-content {
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    flex: 1;
+  }
+
+  .event-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-white);
+    margin: 0;
+  }
+
+  .event-meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .event-meta-item {
+    display: flex;
+    gap: var(--spacing-sm);
+    font-size: 0.875rem;
+  }
+
+  .event-meta-label {
+    color: var(--color-text-secondary);
+    font-weight: 600;
+  }
+
+  .event-meta-value {
+    color: var(--color-accent-cyan);
+  }
+
+  .event-description {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .event-link {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--color-accent-cyan);
+    text-decoration: none;
+    transition: all var(--transition-base);
+    margin-top: auto;
+  }
+
+  .event-link:hover {
+    color: var(--color-accent-magenta);
+    transform: translateX(4px);
+  }
+</style>

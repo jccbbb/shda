@@ -1,0 +1,196 @@
+---
+const base = import.meta.env.BASE_URL;
+
+const navItems = [
+  { name: 'Home', href: `${base}/` },
+  { name: 'About', href: `${base}/om-oss` },
+  { name: 'Members', href: `${base}/medlemmar` },
+  { name: 'Activities', href: `${base}/verksamhet` },
+  { name: 'Events', href: `${base}/events` },
+  { name: 'News', href: `${base}/nyheter` },
+  { name: 'Bylaws', href: `${base}/stadgar` },
+  { name: 'Contact', href: `${base}/kontakt` }
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <div class="container">
+    <nav class="nav-wrapper">
+      <div class="logo">
+        <a href={`${base}/`}>
+          <span class="logo-text">SHDA</span>
+          <span class="logo-subtitle">Scandinavian Hard Dance Alliance</span>
+        </a>
+      </div>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class={currentPath === item.href ? 'active' : ''}
+            >
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+  }
+
+  .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .logo a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .logo-text {
+    font-family: var(--font-accent);
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--color-text-white);
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+  }
+
+  .logo-subtitle {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    color: var(--color-accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-accent-cyan);
+    transition: all 0.3s ease;
+  }
+
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+  }
+
+  .nav-menu a {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-primary);
+    transition: all var(--transition-base);
+    padding: 0.5rem 0;
+    position: relative;
+  }
+
+  .nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-accent-cyan), var(--color-accent-magenta));
+    transition: width var(--transition-base);
+  }
+
+  .nav-menu a:hover,
+  .nav-menu a.active {
+    color: var(--color-accent-cyan);
+  }
+
+  .nav-menu a:hover::after,
+  .nav-menu a.active::after {
+    width: 100%;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 968px) {
+    .mobile-menu-toggle {
+      display: flex;
+    }
+
+    .nav-menu {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background-color: rgba(10, 10, 10, 0.98);
+      padding: 2rem;
+      gap: 1.5rem;
+      transform: translateX(-100%);
+      transition: transform var(--transition-base);
+      border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+    }
+
+    .nav-menu.active {
+      transform: translateX(0);
+    }
+
+    .nav-menu a {
+      font-size: 1.25rem;
+    }
+  }
+</style>
+
+<script>
+  // Mobile menu toggle
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('nav-menu');
+
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('active');
+    toggle?.classList.toggle('active');
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (!target.closest('.nav-wrapper') && menu?.classList.contains('active')) {
+      menu?.classList.remove('active');
+      toggle?.classList.remove('active');
+    }
+  });
+</script>

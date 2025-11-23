@@ -1,0 +1,132 @@
+---
+interface Props {
+  name: string;
+  country: string;
+  description: string;
+  logo?: string;
+  website?: string;
+}
+
+const { name, country, description, logo, website } = Astro.props;
+---
+
+<div class="member-card">
+  {logo ? (
+    <div class="member-logo">
+      <img src={logo} alt={`${name} logo`} />
+    </div>
+  ) : (
+    <div class="member-logo-placeholder">
+      <span>{name.charAt(0)}</span>
+    </div>
+  )}
+
+  <div class="member-content">
+    <h3 class="member-name">{name}</h3>
+    <p class="member-country">{country}</p>
+    <p class="member-description">{description}</p>
+
+    {website && (
+      <a href={website} target="_blank" rel="noopener noreferrer" class="member-link">
+        Visit Website →
+      </a>
+    )}
+  </div>
+</div>
+
+<style>
+  .member-card {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xl);
+    transition: all var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-lg);
+    height: 100%;
+  }
+
+  .member-card:hover {
+    border-color: var(--color-accent-cyan);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+    transform: translateY(-4px);
+  }
+
+  .member-logo {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg-primary);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+  }
+
+  .member-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .member-logo-placeholder {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-accent-cyan) 0%, var(--color-accent-purple) 100%);
+    border-radius: var(--radius-md);
+    font-family: var(--font-accent);
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--color-bg-primary);
+  }
+
+  .member-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    flex: 1;
+  }
+
+  .member-name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-white);
+    margin: 0;
+  }
+
+  .member-country {
+    font-size: 0.875rem;
+    color: var(--color-accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0;
+  }
+
+  .member-description {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: var(--spacing-sm) 0;
+  }
+
+  .member-link {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--color-accent-cyan);
+    text-decoration: none;
+    transition: all var(--transition-base);
+    margin-top: auto;
+  }
+
+  .member-link:hover {
+    color: var(--color-accent-magenta);
+    transform: translateX(4px);
+  }
+</style>

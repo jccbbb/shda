@@ -1,0 +1,274 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EventCard from '../components/EventCard.astro';
+
+const base = import.meta.env.BASE_URL;
+
+// TODO: Replace with actual event data from content collections
+const upcomingEvents = [
+  {
+    title: 'Hardstyle Summit 2025',
+    date: 'March 15, 2025',
+    location: 'Stockholm, Sweden',
+    organizer: 'Forced 2 Dance',
+    description: 'The biggest hardstyle event of the spring featuring international headliners and the best Nordic talent. Prepare for an unforgettable night of raw energy.',
+    link: '#'
+  },
+  {
+    title: 'Nordic Hardcore Night',
+    date: 'April 22, 2025',
+    location: 'Oslo, Norway',
+    organizer: 'EFFEKT',
+    description: 'An intense night of hardcore and frenchcore with the best DJs from Europe. Experience the power of 200+ BPM.',
+    link: '#'
+  },
+  {
+    title: 'Copenhagen Hard Dance Festival',
+    date: 'May 10, 2025',
+    location: 'Copenhagen, Denmark',
+    organizer: 'DAP Events',
+    description: 'Full-day festival celebrating all hard dance genres with multiple stages and international acts.',
+    link: '#'
+  },
+  {
+    title: 'Helsinki Hardstyle Session',
+    date: 'June 5, 2025',
+    location: 'Helsinki, Finland',
+    organizer: 'Hardstyle DNA',
+    description: 'Finland\'s premier hardstyle event bringing together the Nordic hard dance community.',
+    link: '#'
+  },
+  {
+    title: 'Rawstyle Revolution',
+    date: 'July 20, 2025',
+    location: 'Gothenburg, Sweden',
+    organizer: 'Hardstyle Sweden',
+    description: 'Dedicated rawstyle event featuring the hardest kicks and most energetic atmosphere.',
+    link: '#'
+  },
+  {
+    title: 'Scandinavian Hard Dance Meetup',
+    date: 'August 14, 2025',
+    location: 'Aalborg, Denmark',
+    organizer: 'Hardevents Danmark',
+    description: 'Community-focused event bringing together hard dance fans from across Scandinavia.',
+    link: '#'
+  }
+];
+
+const pastEvents = [
+  {
+    title: 'Winter Hardstyle Bash 2024',
+    date: 'December 31, 2024',
+    location: 'Stockholm, Sweden',
+    organizer: 'Forced 2 Dance',
+    description: 'Epic New Year\'s Eve celebration with top hardstyle acts.',
+    link: '#'
+  },
+  {
+    title: 'Hardcore Legends Tour - Oslo',
+    date: 'November 18, 2024',
+    location: 'Oslo, Norway',
+    organizer: 'EFFEKT',
+    description: 'Legendary hardcore artists performing classic and new tracks.',
+    link: '#'
+  }
+];
+---
+
+<BaseLayout title="Events" description="Discover upcoming hard dance events from SHDA members across Scandinavia - hardstyle, hardcore, rawstyle, and more.">
+  <section class="page-hero">
+    <div class="container">
+      <h1>Events Calendar</h1>
+      <p class="lead">
+        Discover hard dance events from our members across Scandinavia
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="intro-text">
+        <p>
+          SHDA members organize events across Sweden, Denmark, Norway, and Finland, bringing
+          the best of hardstyle, hardcore, rawstyle, frenchcore, and hardtechno to the Nordic
+          countries. Join us at any of these upcoming events to experience the energy and
+          passion of the Scandinavian hard dance scene.
+        </p>
+      </div>
+
+      <!-- Upcoming Events -->
+      <div class="events-section">
+        <div class="section-header">
+          <h2>Upcoming Events</h2>
+          <p>Mark your calendars for these exciting hard dance experiences</p>
+        </div>
+        <div class="events-grid">
+          {upcomingEvents.map((event) => (
+            <EventCard {...event} />
+          ))}
+        </div>
+      </div>
+
+      <!-- Past Events -->
+      <div class="events-section">
+        <div class="section-header">
+          <h2>Past Events</h2>
+          <p>Look back at recent highlights from our member organizations</p>
+        </div>
+        <div class="events-grid">
+          {pastEvents.map((event) => (
+            <EventCard {...event} />
+          ))}
+        </div>
+      </div>
+
+      <!-- Travel with Coretours -->
+      <div class="travel-section">
+        <div class="travel-content">
+          <h2>Travel to Events with Coretours</h2>
+          <p>
+            Don't miss out on events across Scandinavia! Coretours, one of our member organizations,
+            offers comfortable bus travel to major hard dance events throughout the Nordic countries
+            and Europe. Connect with fellow fans and travel in style.
+          </p>
+          <a href="#" class="btn btn-primary">Visit Coretours</a>
+        </div>
+      </div>
+
+      <!-- Event Submission -->
+      <div class="submission-section">
+        <h2>Submit Your Event</h2>
+        <p>
+          SHDA members can submit their upcoming events to be featured on this calendar.
+          Help promote your event to the wider Scandinavian hard dance community.
+        </p>
+        <a href={`${base}/kontakt`} class="btn btn-secondary">Submit Event</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: var(--spacing-4xl) 0 var(--spacing-2xl);
+    text-align: center;
+    background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+  }
+
+  .page-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .page-hero .lead {
+    color: var(--color-accent-cyan);
+    font-size: 1.25rem;
+  }
+
+  .intro-text {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-4xl);
+    text-align: center;
+  }
+
+  .intro-text p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-primary);
+  }
+
+  .events-section {
+    margin-bottom: var(--spacing-4xl);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .section-header h2 {
+    color: var(--color-accent-cyan);
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .section-header p {
+    color: var(--color-text-secondary);
+    font-size: 1.0625rem;
+  }
+
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacing-2xl);
+  }
+
+  .travel-section {
+    background: linear-gradient(135deg, var(--color-accent-orange) 0%, var(--color-accent-magenta) 100%);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-4xl) var(--spacing-2xl);
+    margin: var(--spacing-4xl) 0;
+    text-align: center;
+  }
+
+  .travel-content h2 {
+    color: var(--color-bg-primary);
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .travel-content p {
+    color: var(--color-bg-primary);
+    font-size: 1.125rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto var(--spacing-xl);
+  }
+
+  .travel-content .btn-primary {
+    background-color: var(--color-bg-primary);
+    color: var(--color-accent-orange);
+  }
+
+  .travel-content .btn-primary:hover {
+    background-color: var(--color-bg-secondary);
+    box-shadow: 0 0 20px rgba(10, 10, 10, 0.5);
+  }
+
+  .submission-section {
+    max-width: 700px;
+    margin: var(--spacing-4xl) auto 0;
+    padding: var(--spacing-2xl);
+    text-align: center;
+    background-color: var(--color-bg-secondary);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-radius: var(--radius-md);
+  }
+
+  .submission-section h2 {
+    color: var(--color-accent-cyan);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .submission-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  @media (max-width: 768px) {
+    .page-hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .events-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .travel-content h2 {
+      font-size: 2rem;
+    }
+  }
+</style>

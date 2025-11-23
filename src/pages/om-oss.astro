@@ -1,0 +1,294 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="About Us" description="Learn about the Scandinavian Hard Dance Alliance - our vision, mission, and the values that drive us.">
+  <section class="page-hero">
+    <div class="container">
+      <h1>About SHDA</h1>
+      <p class="lead">United by passion, driven by music</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="content-section">
+        <h2>Our Vision</h2>
+        <p>
+          <!-- TODO: Update with real vision statement -->
+          The Scandinavian Hard Dance Alliance (SHDA) envisions a thriving, interconnected hard dance
+          community across the Nordic countries. We believe in the power of music to unite people
+          and create unforgettable experiences. Our vision is to become the leading network for
+          hard dance organizers in Scandinavia, setting the standard for collaboration, quality,
+          and passion in event organization.
+        </p>
+        <p>
+          We strive to create a sustainable ecosystem where organizers, artists, and fans can
+          connect, grow, and celebrate the music we all love. Through unity and cooperation,
+          we aim to elevate the hard dance scene to new heights across Sweden, Denmark, Norway,
+          and Finland.
+        </p>
+      </div>
+
+      <div class="content-section">
+        <h2>Our Mission</h2>
+        <p>
+          <!-- TODO: Update with real mission statement -->
+          Our mission is to support and empower hard dance event organizers who are driven by
+          genuine passion for the music, not just profit. We achieve this through:
+        </p>
+        <ul>
+          <li>Quarterly networking meetings bringing together organizers from all Nordic countries</li>
+          <li>Collaborative event planning and cross-promotion opportunities</li>
+          <li>Shared resources for bookings, pricing, and infrastructure</li>
+          <li>Joint marketing initiatives and social media strategies</li>
+          <li>Knowledge sharing about artists, venues, and best practices</li>
+          <li>Coordinated transport solutions and event takeovers</li>
+          <li>Mentorship for emerging organizers and companies</li>
+        </ul>
+      </div>
+
+      <div class="content-section">
+        <h2>Our Story</h2>
+        <p>
+          <!-- TODO: Update with real history -->
+          Founded in 2024, the Scandinavian Hard Dance Alliance emerged from a shared recognition
+          among leading organizers across the Nordic countries: we are stronger together. What began
+          as informal conversations between Forced 2 Dance and fellow organizers quickly evolved
+          into a formalized network dedicated to mutual support and growth.
+        </p>
+        <p>
+          Starting with a core group of passionate founders, SHDA has grown to include some of
+          the most respected names in Scandinavian hard dance. From event organizers to travel
+          companies, our members share a common goal: to create exceptional experiences for
+          hard dance fans while supporting each other's success.
+        </p>
+      </div>
+
+      <div class="content-section">
+        <h2>Our Values</h2>
+        <div class="values-grid">
+          <div class="value-card">
+            <h3>Passion Over Profit</h3>
+            <p>
+              We organize events because we love the music. While sustainability is important,
+              our primary drive is creating amazing experiences for our community.
+            </p>
+          </div>
+          <div class="value-card">
+            <h3>Collaboration</h3>
+            <p>
+              We believe in working together, sharing knowledge, and supporting each other.
+              Competition is healthy, but cooperation makes us all stronger.
+            </p>
+          </div>
+          <div class="value-card">
+            <h3>Quality</h3>
+            <p>
+              We are committed to high standards in every aspect of event organization,
+              from artist bookings to venue selection to fan experience.
+            </p>
+          </div>
+          <div class="value-card">
+            <h3>Inclusivity</h3>
+            <p>
+              Hard dance is for everyone. We welcome all who share our passion, regardless
+              of background, and work to create safe, inclusive spaces.
+            </p>
+          </div>
+          <div class="value-card">
+            <h3>Sustainability</h3>
+            <p>
+              We build for the long term, ensuring our events and organization practices
+              are environmentally and financially sustainable.
+            </p>
+          </div>
+          <div class="value-card">
+            <h3>Innovation</h3>
+            <p>
+              We embrace new ideas, technologies, and approaches to continuously improve
+              and evolve the hard dance scene.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>What We Do</h2>
+        <p>
+          SHDA operates as a collaborative network with several key activities:
+        </p>
+        <div class="activities-list">
+          <div class="activity">
+            <h4>Quarterly Meetings</h4>
+            <p>
+              Four times a year, members gather to share insights, plan collaborations,
+              and strengthen our network. These meetings rotate between countries to
+              ensure accessibility for all members.
+            </p>
+          </div>
+          <div class="activity">
+            <h4>Event Collaborations</h4>
+            <p>
+              We organize joint events, artist bookings, and cross-promotional campaigns
+              that benefit all members and expand the reach of hard dance across Scandinavia.
+            </p>
+          </div>
+          <div class="activity">
+            <h4>Resource Sharing</h4>
+            <p>
+              From equipment and infrastructure to marketing materials and industry contacts,
+              we pool resources to reduce costs and improve quality for everyone.
+            </p>
+          </div>
+          <div class="activity">
+            <h4>Knowledge Exchange</h4>
+            <p>
+              Members share expertise on everything from pricing strategies to social media
+              marketing, helping each other grow and improve.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section cta-box">
+        <h2>Join Us</h2>
+        <p>
+          Are you a hard dance organizer or company in Scandinavia who shares our values?
+          We're always looking to connect with passionate individuals and organizations
+          who want to contribute to our growing community.
+        </p>
+        <a href={`${base}/kontakt`} class="btn btn-primary">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: var(--spacing-4xl) 0 var(--spacing-2xl);
+    text-align: center;
+    background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+  }
+
+  .page-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .page-hero .lead {
+    color: var(--color-accent-cyan);
+    font-size: 1.5rem;
+  }
+
+  .content-section {
+    margin-bottom: var(--spacing-4xl);
+    max-width: 800px;
+  }
+
+  .content-section h2 {
+    color: var(--color-accent-cyan);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .content-section p,
+  .content-section ul {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-primary);
+  }
+
+  .content-section ul {
+    margin-left: var(--spacing-xl);
+  }
+
+  .content-section li {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+  }
+
+  .value-card {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xl);
+    transition: all var(--transition-base);
+  }
+
+  .value-card:hover {
+    border-color: var(--color-accent-cyan);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+    transform: translateY(-4px);
+  }
+
+  .value-card h3 {
+    color: var(--color-accent-cyan);
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .value-card p {
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  .activities-list {
+    display: grid;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+  }
+
+  .activity {
+    background-color: var(--color-bg-secondary);
+    padding: var(--spacing-xl);
+    border-left: 4px solid var(--color-accent-cyan);
+    border-radius: var(--radius-sm);
+  }
+
+  .activity h4 {
+    color: var(--color-text-white);
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .activity p {
+    margin: 0;
+    color: var(--color-text-secondary);
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(157, 0, 255, 0.1) 100%);
+    border: 1px solid var(--color-accent-cyan);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-2xl);
+    text-align: center;
+    max-width: none;
+  }
+
+  .cta-box h2 {
+    color: var(--color-text-white);
+  }
+
+  .cta-box p {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  @media (max-width: 768px) {
+    .page-hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

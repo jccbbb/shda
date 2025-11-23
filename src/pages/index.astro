@@ -1,0 +1,357 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MemberCard from '../components/MemberCard.astro';
+import EventCard from '../components/EventCard.astro';
+import NewsCard from '../components/NewsCard.astro';
+
+const base = import.meta.env.BASE_URL;
+
+// TODO: Replace with actual member data
+const featuredMembers = [
+  {
+    name: 'Forced 2 Dance',
+    country: 'Sweden',
+    description: 'Main founder and leading hard dance event organizer in Sweden.',
+    website: '#'
+  },
+  {
+    name: 'EFFEKT',
+    country: 'Norway',
+    description: 'Premier hardstyle event organizer bringing the best of hard dance to Norway.',
+    website: '#'
+  },
+  {
+    name: 'DAP Events',
+    country: 'Denmark',
+    description: 'Dynamic event organization focused on creating unforgettable hard dance experiences.',
+    website: '#'
+  },
+  {
+    name: 'Coretours',
+    country: 'Multi-country',
+    description: 'Leading hard dance bus travel company connecting fans across Scandinavia.',
+    website: '#'
+  }
+];
+
+// TODO: Replace with actual event data
+const upcomingEvents = [
+  {
+    title: 'Hardstyle Summit 2025',
+    date: 'March 15, 2025',
+    location: 'Stockholm, Sweden',
+    organizer: 'Forced 2 Dance',
+    description: 'The biggest hardstyle event of the spring featuring international headliners.',
+    link: '#'
+  },
+  {
+    title: 'Nordic Hardcore Night',
+    date: 'April 22, 2025',
+    location: 'Oslo, Norway',
+    organizer: 'EFFEKT',
+    description: 'An intense night of hardcore and frenchcore with the best DJs from Europe.',
+    link: '#'
+  }
+];
+
+// TODO: Replace with actual news data
+const latestNews = [
+  {
+    title: 'SHDA Announces Quarterly Meeting Schedule',
+    date: 'January 15, 2025',
+    excerpt: 'We are excited to announce the schedule for our quarterly meetings throughout 2025, bringing together organizers from across Scandinavia.',
+    slug: 'quarterly-meeting-schedule-2025'
+  },
+  {
+    title: 'Welcome New Member: Hardstyle Sweden',
+    date: 'January 10, 2025',
+    excerpt: 'We are thrilled to welcome Hardstyle Sweden to the alliance, expanding our network of passionate hard dance organizers.',
+    slug: 'welcome-hardstyle-sweden'
+  }
+];
+---
+
+<BaseLayout title="Home" description="Scandinavian Hard Dance Alliance - United by passion, driven by music. A network promoting hard dance across the Nordic countries.">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title text-gradient">
+          Scandinavian Hard Dance Alliance
+        </h1>
+        <p class="hero-subtitle">
+          United by passion, driven by music
+        </p>
+        <p class="hero-description">
+          A network of organizers across Sweden, Denmark, Norway, and Finland working together
+          to promote hard dance music with love and dedication, not just for profit.
+        </p>
+        <div class="hero-cta">
+          <a href={`${base}/om-oss`} class="btn btn-primary">Learn More About Us</a>
+          <a href={`${base}/kontakt`} class="btn btn-secondary">Join the Alliance</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="mission">
+    <div class="container">
+      <h2 class="text-center">Our Mission</h2>
+      <div class="mission-grid">
+        <div class="mission-item">
+          <div class="mission-icon">🎵</div>
+          <h3>Passion for Music</h3>
+          <p>
+            We organize events driven by our love for hard dance - hardstyle, hardcore,
+            rawstyle, frenchcore, and hardtechno.
+          </p>
+        </div>
+        <div class="mission-item">
+          <div class="mission-icon">🤝</div>
+          <h3>Collaboration</h3>
+          <p>
+            Working together across borders to support each other with bookings, infrastructure,
+            marketing, and resources.
+          </p>
+        </div>
+        <div class="mission-item">
+          <div class="mission-icon">🌍</div>
+          <h3>Nordic Unity</h3>
+          <p>
+            Connecting organizers and fans across Sweden, Denmark, Norway, and Finland to strengthen
+            the Scandinavian hard dance scene.
+          </p>
+        </div>
+        <div class="mission-item">
+          <div class="mission-icon">📈</div>
+          <h3>Community Growth</h3>
+          <p>
+            Quarterly meetings, event collaborations, and shared resources to help our
+            community thrive together.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Members -->
+  <section class="featured-members">
+    <div class="container">
+      <h2 class="text-center">Our Members</h2>
+      <p class="section-intro text-center">
+        Meet some of the passionate organizers and companies that make up our alliance
+      </p>
+      <div class="grid grid-4">
+        {featuredMembers.map((member) => (
+          <MemberCard {...member} />
+        ))}
+      </div>
+      <div class="text-center spacer-xl">
+        <a href={`${base}/medlemmar`} class="btn btn-primary">View All Members</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Events -->
+  <section class="upcoming-events">
+    <div class="container">
+      <h2 class="text-center">Upcoming Events</h2>
+      <p class="section-intro text-center">
+        Check out the latest events from our member organizations
+      </p>
+      <div class="grid grid-2">
+        {upcomingEvents.map((event) => (
+          <EventCard {...event} />
+        ))}
+      </div>
+      <div class="text-center spacer-xl">
+        <a href={`${base}/events`} class="btn btn-primary">See Full Calendar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest News -->
+  <section class="latest-news">
+    <div class="container">
+      <h2 class="text-center">Latest News</h2>
+      <p class="section-intro text-center">
+        Stay updated with the latest from the alliance
+      </p>
+      <div class="grid grid-2">
+        {latestNews.map((news) => (
+          <NewsCard {...news} />
+        ))}
+      </div>
+      <div class="text-center spacer-xl">
+        <a href={`${base}/nyheter`} class="btn btn-primary">Read All News</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Join the Movement</h2>
+        <p>
+          Are you a hard dance organizer or company in Scandinavia driven by passion for the music?
+          Join us in building a stronger, more connected Nordic hard dance community.
+        </p>
+        <a href={`${base}/kontakt`} class="btn btn-primary">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    padding: var(--spacing-4xl) 0;
+    background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.1;
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-accent-cyan);
+    margin-bottom: var(--spacing-xl);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-2xl);
+    line-height: 1.8;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Mission Section */
+  .mission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-2xl);
+    margin-top: var(--spacing-2xl);
+  }
+
+  .mission-item {
+    text-align: center;
+    padding: var(--spacing-xl);
+  }
+
+  .mission-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .mission-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-accent-cyan);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .mission-item p {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  /* Section Intro */
+  .section-intro {
+    color: var(--color-text-secondary);
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-2xl);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: linear-gradient(135deg, var(--color-accent-cyan) 0%, var(--color-accent-purple) 100%);
+    padding: var(--spacing-4xl) 0;
+  }
+
+  .cta-content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cta-content h2 {
+    color: var(--color-bg-primary);
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .cta-content p {
+    color: var(--color-bg-primary);
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.8;
+  }
+
+  .cta-content .btn-primary {
+    background-color: var(--color-bg-primary);
+    color: var(--color-accent-cyan);
+  }
+
+  .cta-content .btn-primary:hover {
+    background-color: var(--color-bg-secondary);
+    box-shadow: 0 0 20px rgba(10, 10, 10, 0.5);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.125rem;
+    }
+
+    .hero-cta {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cta-content h2 {
+      font-size: 2rem;
+    }
+  }
+</style>

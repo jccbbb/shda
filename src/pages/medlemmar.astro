@@ -1,0 +1,235 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MemberCard from '../components/MemberCard.astro';
+
+const base = import.meta.env.BASE_URL;
+
+// TODO: Add actual member logos to /public/logos/
+// TODO: Update member descriptions and websites
+const members = [
+  {
+    name: 'Forced 2 Dance',
+    country: 'Sweden',
+    description: 'Main founder and leading hard dance event organizer in Sweden. Passionate about bringing the best hardstyle and hardcore events to the Swedish audience.',
+    website: '#',
+    logo: '/logos/forced-2-dance.png'
+  },
+  {
+    name: 'EFFEKT',
+    country: 'Norway',
+    description: 'Premier hardstyle event organizer bringing the best of hard dance to Norway with high-quality productions and world-class artists.',
+    website: '#',
+    logo: '/logos/effekt.png'
+  },
+  {
+    name: 'DAP Events',
+    country: 'Denmark',
+    description: 'Dynamic event organization focused on creating unforgettable hard dance experiences throughout Denmark.',
+    website: '#',
+    logo: '/logos/dap-events.png'
+  },
+  {
+    name: 'Hardstyle DNA',
+    country: 'Finland',
+    description: 'Finland\'s premier hardstyle event brand, dedicated to growing and nurturing the Finnish hard dance community.',
+    website: '#',
+    logo: '/logos/hardstyle-dna.png'
+  },
+  {
+    name: 'Resistancefi',
+    country: 'Finland',
+    description: 'Finnish hard dance organization committed to bringing diverse hard dance events to the Finnish scene.',
+    website: '#',
+    logo: '/logos/resistancefi.png'
+  },
+  {
+    name: 'Hardevents Danmark',
+    country: 'Denmark',
+    description: 'Danish hard dance event organizer passionate about creating memorable experiences for the hardcore community.',
+    website: '#',
+    logo: '/logos/hardevents-danmark.png'
+  },
+  {
+    name: 'Coretours',
+    country: 'Multi-country',
+    description: 'Leading hard dance bus travel company connecting fans across Scandinavia to the biggest hard dance events in Europe.',
+    website: '#',
+    logo: '/logos/coretours.png'
+  },
+  {
+    name: 'Hardstyle Sweden',
+    country: 'Sweden',
+    description: 'Swedish hardstyle organization dedicated to promoting and growing the hardstyle scene throughout Sweden.',
+    website: '#',
+    logo: '/logos/hardstyle-sweden.png'
+  }
+];
+---
+
+<BaseLayout title="Members" description="Meet the member organizations of the Scandinavian Hard Dance Alliance - passionate organizers and companies across the Nordic countries.">
+  <section class="page-hero">
+    <div class="container">
+      <h1>Our Members</h1>
+      <p class="lead">
+        The passionate organizers and companies driving the hard dance scene across Scandinavia
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="intro-text">
+        <p>
+          The Scandinavian Hard Dance Alliance brings together the most dedicated and passionate
+          hard dance organizers and companies from across the Nordic countries. Each member shares
+          our commitment to creating exceptional experiences driven by love for the music.
+        </p>
+        <p>
+          From event organizers hosting epic nights in their home countries to travel companies
+          connecting fans across borders, our members represent the diversity and strength of
+          the Scandinavian hard dance community.
+        </p>
+      </div>
+
+      <div class="members-grid">
+        {members.map((member) => (
+          <MemberCard {...member} />
+        ))}
+      </div>
+
+      <div class="join-section">
+        <h2>Become a Member</h2>
+        <p>
+          Are you a hard dance organizer or company in Scandinavia who shares our values
+          and passion for the music? We're always looking to expand our network with
+          like-minded individuals and organizations.
+        </p>
+        <h3>Membership Benefits</h3>
+        <ul class="benefits-list">
+          <li>Participate in quarterly networking meetings</li>
+          <li>Access to collaborative booking opportunities</li>
+          <li>Shared marketing and promotional resources</li>
+          <li>Infrastructure and equipment sharing</li>
+          <li>Knowledge exchange with experienced organizers</li>
+          <li>Cross-promotion across member networks</li>
+          <li>Priority access to alliance-organized events</li>
+          <li>Transport and logistics coordination</li>
+        </ul>
+        <h3>Who Can Join?</h3>
+        <p>
+          SHDA membership is open to:
+        </p>
+        <ul class="eligibility-list">
+          <li>Event organizers focused on hard dance genres (hardstyle, hardcore, rawstyle, frenchcore, hardtechno)</li>
+          <li>Companies serving the hard dance community (travel, production, etc.)</li>
+          <li>Organizations based in or operating within Scandinavia (Sweden, Denmark, Norway, Finland)</li>
+          <li>Entities demonstrating passion for the music and community over pure profit</li>
+        </ul>
+        <div class="cta-box">
+          <a href={`${base}/kontakt`} class="btn btn-primary">Apply for Membership</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: var(--spacing-4xl) 0 var(--spacing-2xl);
+    text-align: center;
+    background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+  }
+
+  .page-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .page-hero .lead {
+    color: var(--color-accent-cyan);
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .intro-text {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-4xl);
+    text-align: center;
+  }
+
+  .intro-text p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-4xl);
+  }
+
+  .join-section {
+    max-width: 800px;
+    margin: var(--spacing-4xl) auto 0;
+    padding-top: var(--spacing-4xl);
+    border-top: 1px solid rgba(0, 240, 255, 0.2);
+  }
+
+  .join-section h2 {
+    color: var(--color-accent-cyan);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .join-section h3 {
+    color: var(--color-text-white);
+    font-size: 1.5rem;
+    margin-top: var(--spacing-2xl);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .join-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .benefits-list,
+  .eligibility-list {
+    margin-left: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .benefits-list li,
+  .eligibility-list li {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .cta-box {
+    text-align: center;
+    margin-top: var(--spacing-2xl);
+    padding: var(--spacing-2xl);
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(157, 0, 255, 0.1) 100%);
+    border: 1px solid var(--color-accent-cyan);
+    border-radius: var(--radius-md);
+  }
+
+  @media (max-width: 768px) {
+    .page-hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .members-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

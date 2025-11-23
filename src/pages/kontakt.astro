@@ -1,0 +1,353 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Contact" description="Get in touch with the Scandinavian Hard Dance Alliance - apply for membership, ask questions, or propose collaborations.">
+  <section class="page-hero">
+    <div class="container">
+      <h1>Get In Touch</h1>
+      <p class="lead">Questions, membership inquiries, or collaboration proposals? We'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-form-section">
+          <h2>Send Us a Message</h2>
+          <p>
+            Fill out the form below and we'll get back to you as soon as possible.
+            For membership applications, please provide details about your organization.
+          </p>
+
+          <form class="contact-form" method="POST" action="#">
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Your name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="organization">Organization</label>
+              <input
+                type="text"
+                id="organization"
+                name="organization"
+                placeholder="Your organization (if applicable)"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="your.email@example.com"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="country">Country</label>
+              <select id="country" name="country">
+                <option value="">Select country</option>
+                <option value="sweden">Sweden</option>
+                <option value="denmark">Denmark</option>
+                <option value="norway">Norway</option>
+                <option value="finland">Finland</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject *</label>
+              <select id="subject" name="subject" required>
+                <option value="">Select a subject</option>
+                <option value="membership">Membership Application</option>
+                <option value="collaboration">Collaboration Proposal</option>
+                <option value="event">Event Submission</option>
+                <option value="general">General Inquiry</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                required
+                placeholder="Tell us about your inquiry..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-info-section">
+          <h2>Contact Information</h2>
+
+          <div class="info-card">
+            <h3>Email</h3>
+            <p>
+              <!-- TODO: Add actual email addresses -->
+              <strong>General Inquiries:</strong><br>
+              <a href="mailto:info@shda.org">info@shda.org</a>
+            </p>
+            <p>
+              <strong>Membership:</strong><br>
+              <a href="mailto:membership@shda.org">membership@shda.org</a>
+            </p>
+            <p>
+              <strong>Board:</strong><br>
+              <a href="mailto:board@shda.org">board@shda.org</a>
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Social Media</h3>
+            <p>Follow us for updates and news:</p>
+            <div class="social-links">
+              <!-- TODO: Add actual social media links -->
+              <a href="#" class="social-link">Facebook</a>
+              <a href="#" class="social-link">Instagram</a>
+              <a href="#" class="social-link">Twitter/X</a>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <h3>Office</h3>
+            <p>
+              <!-- TODO: Add actual office address if applicable -->
+              Scandinavian Hard Dance Alliance<br>
+              [Address]<br>
+              [City, Country]
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Member Organizations</h3>
+            <p>
+              You can also reach out directly to our <a href={`${base}/medlemmar`}>member organizations</a>
+              for event-specific inquiries or collaborations.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="quick-links-section">
+        <h2>Looking for Something Specific?</h2>
+        <div class="quick-links-grid">
+          <div class="quick-link-card">
+            <h3>Join SHDA</h3>
+            <p>
+              Learn about membership benefits and how to apply to become part of the alliance.
+            </p>
+            <a href={`${base}/medlemmar#join`} class="btn btn-secondary">Membership Info</a>
+          </div>
+          <div class="quick-link-card">
+            <h3>Submit an Event</h3>
+            <p>
+              Member organizations can submit events to be featured on our calendar.
+            </p>
+            <a href={`${base}/events#submit`} class="btn btn-secondary">Submit Event</a>
+          </div>
+          <div class="quick-link-card">
+            <h3>Press & Media</h3>
+            <p>
+              Media inquiries, press releases, and official alliance information.
+            </p>
+            <a href="mailto:press@shda.org" class="btn btn-secondary">Media Contact</a>
+          </div>
+          <div class="quick-link-card">
+            <h3>Partnerships</h3>
+            <p>
+              Interested in partnering with SHDA? Let's discuss collaboration opportunities.
+            </p>
+            <a href="mailto:partnerships@shda.org" class="btn btn-secondary">Partner With Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: var(--spacing-4xl) 0 var(--spacing-2xl);
+    text-align: center;
+    background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+  }
+
+  .page-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .page-hero .lead {
+    color: var(--color-accent-cyan);
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--spacing-4xl);
+    margin-bottom: var(--spacing-4xl);
+  }
+
+  .contact-form-section h2,
+  .contact-info-section h2 {
+    color: var(--color-accent-cyan);
+    font-size: 2rem;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .contact-form-section > p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .info-card {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .info-card h3 {
+    color: var(--color-accent-cyan);
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .info-card p {
+    font-size: 0.9375rem;
+    line-height: 1.8;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .info-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .info-card a {
+    color: var(--color-accent-cyan);
+  }
+
+  .social-links {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    margin-top: var(--spacing-md);
+  }
+
+  .social-link {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--color-bg-primary);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-heading);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all var(--transition-base);
+  }
+
+  .social-link:hover {
+    border-color: var(--color-accent-cyan);
+    background-color: rgba(0, 240, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+  }
+
+  .quick-links-section {
+    padding-top: var(--spacing-4xl);
+    border-top: 1px solid rgba(0, 240, 255, 0.2);
+  }
+
+  .quick-links-section h2 {
+    color: var(--color-accent-cyan);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+  }
+
+  .quick-link-card {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xl);
+    text-align: center;
+    transition: all var(--transition-base);
+  }
+
+  .quick-link-card:hover {
+    border-color: var(--color-accent-cyan);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+    transform: translateY(-4px);
+  }
+
+  .quick-link-card h3 {
+    color: var(--color-text-white);
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .quick-link-card p {
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  @media (max-width: 968px) {
+    .page-hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-2xl);
+    }
+
+    .quick-links-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

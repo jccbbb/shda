@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsCard from '../components/NewsCard.astro';
+
+// TODO: Replace with actual blog posts from content collections
+const newsArticles = [
+  {
+    title: 'SHDA Announces 2025 Quarterly Meeting Schedule',
+    date: 'January 22, 2025',
+    excerpt: 'We are excited to announce the schedule for our quarterly meetings throughout 2025. Members will gather in each Nordic country to strengthen collaboration and plan exciting initiatives.',
+    slug: 'quarterly-meeting-schedule-2025'
+  },
+  {
+    title: 'Welcome Hardstyle Sweden to the Alliance',
+    date: 'January 15, 2025',
+    excerpt: 'We are thrilled to welcome Hardstyle Sweden as our newest member. Their passion and dedication to the Swedish hardstyle scene makes them a perfect fit for SHDA.',
+    slug: 'welcome-hardstyle-sweden'
+  },
+  {
+    title: 'Successful Collaboration: Nordic Hardcore Tour 2024',
+    date: 'December 20, 2024',
+    excerpt: 'The Nordic Hardcore Tour, a collaborative effort between EFFEKT, DAP Events, and Forced 2 Dance, was a massive success. Over 3000 attendees across four cities experienced world-class hardcore music.',
+    slug: 'nordic-hardcore-tour-2024-recap'
+  },
+  {
+    title: 'SHDA Resource Sharing Platform Launches',
+    date: 'November 30, 2024',
+    excerpt: 'Members now have access to our new digital platform for sharing resources, coordinating bookings, and accessing shared marketing materials. This tool will streamline collaboration across borders.',
+    slug: 'resource-sharing-platform-launch'
+  },
+  {
+    title: 'Coretours Expands Nordic Routes',
+    date: 'November 10, 2024',
+    excerpt: 'SHDA member Coretours announces expanded bus routes connecting more Scandinavian cities to major hard dance events throughout 2025. Making events more accessible for fans across the region.',
+    slug: 'coretours-expands-routes'
+  },
+  {
+    title: 'SHDA Founding: A New Era for Scandinavian Hard Dance',
+    date: 'October 1, 2024',
+    excerpt: 'The Scandinavian Hard Dance Alliance officially launches with eight founding members committed to collaboration, passion, and growing the Nordic hard dance scene together.',
+    slug: 'shda-founding-announcement'
+  }
+];
+---
+
+<BaseLayout title="News" description="Latest news and updates from the Scandinavian Hard Dance Alliance and our member organizations.">
+  <section class="page-hero">
+    <div class="container">
+      <h1>News & Updates</h1>
+      <p class="lead">
+        Stay informed about the latest from SHDA and the Scandinavian hard dance scene
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="intro-text">
+        <p>
+          Get the latest updates on SHDA activities, member achievements, upcoming collaborations,
+          and news from across the Scandinavian hard dance community.
+        </p>
+      </div>
+
+      <div class="news-grid">
+        {newsArticles.map((article) => (
+          <NewsCard {...article} />
+        ))}
+      </div>
+
+      <!-- Newsletter Signup -->
+      <div class="newsletter-section">
+        <h2>Stay Updated</h2>
+        <p>
+          Subscribe to our newsletter to receive the latest news, event announcements,
+          and updates from the Scandinavian Hard Dance Alliance directly in your inbox.
+        </p>
+        <form class="newsletter-form">
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            required
+            aria-label="Email address"
+          />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p class="newsletter-note">
+          We respect your privacy. Unsubscribe anytime.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: var(--spacing-4xl) 0 var(--spacing-2xl);
+    text-align: center;
+    background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+  }
+
+  .page-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .page-hero .lead {
+    color: var(--color-accent-cyan);
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .intro-text {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-4xl);
+    text-align: center;
+  }
+
+  .intro-text p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-primary);
+  }
+
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-4xl);
+  }
+
+  .newsletter-section {
+    max-width: 600px;
+    margin: var(--spacing-4xl) auto 0;
+    padding: var(--spacing-2xl);
+    text-align: center;
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(157, 0, 255, 0.1) 100%);
+    border: 1px solid var(--color-accent-cyan);
+    border-radius: var(--radius-md);
+  }
+
+  .newsletter-section h2 {
+    color: var(--color-accent-cyan);
+    font-size: 2rem;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .newsletter-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .newsletter-form input {
+    flex: 1;
+  }
+
+  .newsletter-note {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .page-hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .news-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .newsletter-form {
+      flex-direction: column;
+    }
+  }
+</style>

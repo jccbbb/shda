@@ -1,0 +1,410 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Activities" description="Learn about SHDA's activities - quarterly meetings, event collaborations, resource sharing, and community initiatives.">
+  <section class="page-hero">
+    <div class="container">
+      <h1>Our Activities</h1>
+      <p class="lead">How we work together to strengthen the Scandinavian hard dance scene</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="intro-section">
+        <p>
+          The Scandinavian Hard Dance Alliance operates through structured activities designed
+          to maximize collaboration, knowledge sharing, and mutual support among our members.
+        </p>
+      </div>
+
+      <!-- Quarterly Meetings -->
+      <div class="activity-section">
+        <div class="activity-header">
+          <span class="activity-icon">📅</span>
+          <h2>Quarterly Meetings</h2>
+        </div>
+        <div class="activity-content">
+          <p>
+            Four times a year, SHDA members gather for comprehensive networking and planning sessions.
+            These meetings are the cornerstone of our collaborative approach.
+          </p>
+          <h3>Meeting Format</h3>
+          <ul>
+            <li><strong>Location:</strong> Rotates between member countries to ensure accessibility</li>
+            <li><strong>Duration:</strong> Full-day sessions with optional social activities</li>
+            <li><strong>Attendance:</strong> Open to all active members and invited guests</li>
+            <li><strong>Format:</strong> Mix of presentations, workshops, and open discussions</li>
+          </ul>
+          <h3>Typical Agenda</h3>
+          <div class="agenda-list">
+            <div class="agenda-item">
+              <h4>Updates & Reports</h4>
+              <p>Members share recent event successes, challenges, and upcoming plans</p>
+            </div>
+            <div class="agenda-item">
+              <h4>Collaborative Planning</h4>
+              <p>Identify opportunities for joint events, shared bookings, and cross-promotion</p>
+            </div>
+            <div class="agenda-item">
+              <h4>Knowledge Sharing</h4>
+              <p>Presentations on best practices, new technologies, and industry insights</p>
+            </div>
+            <div class="agenda-item">
+              <h4>Resource Coordination</h4>
+              <p>Discuss shared infrastructure, equipment, and logistics</p>
+            </div>
+          </div>
+          <!-- TODO: Add actual meeting schedule -->
+          <div class="info-box">
+            <h4>2025 Meeting Schedule</h4>
+            <ul>
+              <li><strong>Q1:</strong> March 15, Stockholm, Sweden</li>
+              <li><strong>Q2:</strong> June 20, Copenhagen, Denmark</li>
+              <li><strong>Q3:</strong> September 12, Oslo, Norway</li>
+              <li><strong>Q4:</strong> December 5, Helsinki, Finland</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event Collaborations -->
+      <div class="activity-section">
+        <div class="activity-header">
+          <span class="activity-icon">🎉</span>
+          <h2>Event Collaborations</h2>
+        </div>
+        <div class="activity-content">
+          <p>
+            Members regularly collaborate on events, combining resources and expertise to create
+            exceptional experiences that wouldn't be possible individually.
+          </p>
+          <h3>Types of Collaboration</h3>
+          <div class="collab-grid">
+            <div class="collab-card">
+              <h4>Joint Events</h4>
+              <p>Co-organized events featuring multiple member brands and shared production</p>
+            </div>
+            <div class="collab-card">
+              <h4>Artist Sharing</h4>
+              <p>Coordinated bookings allowing artists to perform at multiple member events</p>
+            </div>
+            <div class="collab-card">
+              <h4>Event Takeovers</h4>
+              <p>Members host stages or rooms at each other's events</p>
+            </div>
+            <div class="collab-card">
+              <h4>Cross-Promotion</h4>
+              <p>Mutual marketing and promotional support across member networks</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resource Sharing -->
+      <div class="activity-section">
+        <div class="activity-header">
+          <span class="activity-icon">🔧</span>
+          <h2>Resource Sharing</h2>
+        </div>
+        <div class="activity-content">
+          <p>
+            SHDA members pool resources to reduce costs, improve quality, and increase efficiency
+            across all operations.
+          </p>
+          <h3>Shared Resources Include</h3>
+          <div class="resource-grid">
+            <div class="resource-item">
+              <h4>Booking Coordination</h4>
+              <p>Shared artist contacts, negotiated rates, and coordinated tour schedules</p>
+            </div>
+            <div class="resource-item">
+              <h4>Infrastructure</h4>
+              <p>Equipment sharing, production resources, and technical expertise</p>
+            </div>
+            <div class="resource-item">
+              <h4>Marketing Materials</h4>
+              <p>Design templates, promotional assets, and content creation tools</p>
+            </div>
+            <div class="resource-item">
+              <h4>Industry Contacts</h4>
+              <p>Venue connections, supplier relationships, and service provider networks</p>
+            </div>
+            <div class="resource-item">
+              <h4>Transport & Logistics</h4>
+              <p>Coordinated travel, shared transportation, and logistics planning</p>
+            </div>
+            <div class="resource-item">
+              <h4>Knowledge Base</h4>
+              <p>Best practices documentation, templates, and operational guides</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Community Initiatives -->
+      <div class="activity-section">
+        <div class="activity-header">
+          <span class="activity-icon">💡</span>
+          <h2>Community Initiatives</h2>
+        </div>
+        <div class="activity-content">
+          <p>
+            Beyond our core operational activities, SHDA engages in initiatives that strengthen
+            and grow the wider hard dance community.
+          </p>
+          <div class="initiative-list">
+            <div class="initiative-item">
+              <h4>Newcomer Support</h4>
+              <p>
+                Mentorship programs for emerging organizers, helping new talent enter the scene
+                with guidance from experienced members.
+              </p>
+            </div>
+            <div class="initiative-item">
+              <h4>Artist Development</h4>
+              <p>
+                Supporting up-and-coming Nordic hard dance artists through coordinated bookings
+                and promotional opportunities.
+              </p>
+            </div>
+            <div class="initiative-item">
+              <h4>Safety & Standards</h4>
+              <p>
+                Developing and promoting best practices for event safety, security, and
+                attendee wellbeing across all member events.
+              </p>
+            </div>
+            <div class="initiative-item">
+              <h4>Scene Growth</h4>
+              <p>
+                Strategic initiatives to expand the hard dance audience and introduce new
+                fans to the music we love.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Get Involved -->
+      <div class="cta-section">
+        <h2>Get Involved</h2>
+        <p>
+          Interested in participating in our activities? SHDA members enjoy full access to
+          all meetings, collaborations, and resources. If you're a hard dance organizer or
+          company in Scandinavia, we'd love to hear from you.
+        </p>
+        <a href={`${base}/kontakt`} class="btn btn-primary">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: var(--spacing-4xl) 0 var(--spacing-2xl);
+    text-align: center;
+    background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+  }
+
+  .page-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .page-hero .lead {
+    color: var(--color-accent-cyan);
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .intro-section {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-4xl);
+    text-align: center;
+  }
+
+  .intro-section p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--color-text-primary);
+  }
+
+  .activity-section {
+    margin-bottom: var(--spacing-4xl);
+    padding: var(--spacing-2xl);
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(0, 240, 255, 0.1);
+  }
+
+  .activity-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .activity-icon {
+    font-size: 3rem;
+  }
+
+  .activity-header h2 {
+    color: var(--color-accent-cyan);
+    margin: 0;
+  }
+
+  .activity-content h3 {
+    color: var(--color-text-white);
+    font-size: 1.5rem;
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .activity-content h4 {
+    color: var(--color-accent-cyan);
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .activity-content p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .activity-content ul {
+    margin-left: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .activity-content li {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .agenda-list {
+    display: grid;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+  }
+
+  .agenda-item {
+    background-color: var(--color-bg-primary);
+    padding: var(--spacing-lg);
+    border-left: 4px solid var(--color-accent-cyan);
+    border-radius: var(--radius-sm);
+  }
+
+  .agenda-item h4 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .agenda-item p {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+  }
+
+  .info-box {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(157, 0, 255, 0.1) 100%);
+    border: 1px solid var(--color-accent-cyan);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+  }
+
+  .collab-grid,
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+  }
+
+  .collab-card,
+  .resource-item {
+    background-color: var(--color-bg-primary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+  }
+
+  .collab-card h4,
+  .resource-item h4 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .collab-card p,
+  .resource-item p {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+  }
+
+  .initiative-list {
+    display: grid;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+  }
+
+  .initiative-item {
+    background-color: var(--color-bg-primary);
+    padding: var(--spacing-lg);
+    border-left: 4px solid var(--color-accent-magenta);
+    border-radius: var(--radius-sm);
+  }
+
+  .initiative-item h4 {
+    color: var(--color-accent-magenta);
+  }
+
+  .initiative-item p {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+  }
+
+  .cta-section {
+    max-width: 700px;
+    margin: var(--spacing-4xl) auto 0;
+    padding: var(--spacing-2xl);
+    text-align: center;
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(157, 0, 255, 0.1) 100%);
+    border: 1px solid var(--color-accent-cyan);
+    border-radius: var(--radius-md);
+  }
+
+  .cta-section h2 {
+    color: var(--color-text-white);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .cta-section p {
+    font-size: 1.0625rem;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  @media (max-width: 768px) {
+    .page-hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .activity-header {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .collab-grid,
+    .resource-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,172 @@
+---
+const base = import.meta.env.BASE_URL;
+const currentYear = new Date().getFullYear();
+
+const socialLinks = [
+  { name: 'Facebook', url: '#', icon: 'facebook' },
+  { name: 'Instagram', url: '#', icon: 'instagram' },
+  { name: 'Twitter/X', url: '#', icon: 'twitter' }
+];
+
+const quickLinks = [
+  { name: 'About Us', href: `${base}/om-oss` },
+  { name: 'Members', href: `${base}/medlemmar` },
+  { name: 'Events', href: `${base}/events` },
+  { name: 'Contact', href: `${base}/kontakt` }
+];
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- About Section -->
+      <div class="footer-section">
+        <h3 class="footer-heading">SHDA</h3>
+        <p class="footer-text">
+          Scandinavian Hard Dance Alliance - A network of organizers across Sweden, Denmark,
+          Norway, and Finland promoting hard dance music with passion and dedication.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h3 class="footer-heading">Quick Links</h3>
+        <ul class="footer-links">
+          {quickLinks.map((link) => (
+            <li><a href={link.href}>{link.name}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-section">
+        <h3 class="footer-heading">Get In Touch</h3>
+        <ul class="footer-contact">
+          <li>Email: <a href="mailto:info@shda.org">info@shda.org</a></li>
+          <li>Location: Scandinavia</li>
+        </ul>
+      </div>
+
+      <!-- Social Media -->
+      <div class="footer-section">
+        <h3 class="footer-heading">Follow Us</h3>
+        <div class="social-links">
+          {socialLinks.map((social) => (
+            <a href={social.url} aria-label={social.name} class="social-link">
+              {social.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} Scandinavian Hard Dance Alliance. All rights reserved.</p>
+      <p class="footer-tagline">United by passion, driven by music.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: var(--color-bg-secondary);
+    border-top: 1px solid rgba(0, 240, 255, 0.2);
+    padding: var(--spacing-4xl) 0 var(--spacing-xl);
+    margin-top: var(--spacing-4xl);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .footer-heading {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .footer-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+  }
+
+  .footer-links,
+  .footer-contact {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .footer-links a,
+  .footer-contact a {
+    color: var(--color-text-primary);
+    transition: color var(--transition-base);
+  }
+
+  .footer-links a:hover,
+  .footer-contact a:hover {
+    color: var(--color-accent-cyan);
+  }
+
+  .social-links {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+  }
+
+  .social-link {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--color-bg-primary);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-heading);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all var(--transition-base);
+  }
+
+  .social-link:hover {
+    border-color: var(--color-accent-cyan);
+    background-color: rgba(0, 240, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid rgba(0, 240, 255, 0.1);
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+  }
+
+  .footer-tagline {
+    margin-top: var(--spacing-sm);
+    color: var(--color-accent-cyan);
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-xl);
+    }
+  }
+</style>
