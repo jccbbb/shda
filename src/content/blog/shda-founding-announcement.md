@@ -67,4 +67,4 @@ Interested in learning more about SHDA or applying for membership? Visit our [co
 
 ---
 
-*United by passion, driven by music. Welcome to SHDA.*
+*United by passion, driven by hard dance music. Welcome to SHDA.*
