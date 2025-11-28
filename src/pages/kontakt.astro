@@ -297,6 +297,9 @@ const base = import.meta.env.BASE_URL;
     padding: var(--spacing-xl);
     text-align: center;
     transition: all var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   .quick-link-card:hover {
@@ -315,6 +318,11 @@ const base = import.meta.env.BASE_URL;
     font-size: 0.9375rem;
     color: var(--color-text-secondary);
     margin-bottom: var(--spacing-lg);
+    flex: 1;
+  }
+
+  .quick-link-card .btn {
+    margin-top: auto;
   }
 
   @media (max-width: 968px) {
