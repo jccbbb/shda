@@ -48,9 +48,12 @@ const { title, date, excerpt, slug, image } = Astro.props;
 
   .news-image {
     width: 100%;
-    height: 200px;
+    height: 250px;
     overflow: hidden;
     background-color: var(--color-bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .news-image img {
