@@ -1,0 +1,65 @@
+<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="800" fill="#0a0a0a"/>
+
+  <!-- Gradient definitions -->
+  <defs>
+    <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00f0ff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ff00ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff6b00;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="cyanPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00f0ff;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#9d00ff;stop-opacity:0.3" />
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Decorative geometric shapes -->
+  <circle cx="150" cy="150" r="80" fill="none" stroke="url(#neonGradient)" stroke-width="2" opacity="0.3"/>
+  <circle cx="650" cy="650" r="100" fill="none" stroke="#00f0ff" stroke-width="2" opacity="0.2"/>
+  <rect x="500" y="100" width="150" height="150" fill="none" stroke="#ff00ff" stroke-width="2" opacity="0.2" transform="rotate(45 575 175)"/>
+
+  <!-- Lines -->
+  <line x1="0" y1="400" x2="800" y2="400" stroke="url(#cyanPurple)" stroke-width="1" opacity="0.3"/>
+  <line x1="400" y1="0" x2="400" y2="800" stroke="url(#cyanPurple)" stroke-width="1" opacity="0.3"/>
+
+  <!-- Center icon - Music/Sound wave inspired -->
+  <g filter="url(#glow)">
+    <!-- Equalizer bars -->
+    <rect x="320" y="300" width="30" height="200" fill="#00f0ff" rx="4">
+      <animate attributeName="height" values="200;120;200" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="300;380;300" dur="1.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="370" y="250" width="30" height="300" fill="#ff00ff" rx="4">
+      <animate attributeName="height" values="300;180;300" dur="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="250;370;250" dur="1.2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="420" y="280" width="30" height="240" fill="#ff6b00" rx="4">
+      <animate attributeName="height" values="240;150;240" dur="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="280;370;280" dur="1.8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="470" y="320" width="30" height="160" fill="#9d00ff" rx="4">
+      <animate attributeName="height" values="160;100;160" dur="1.4s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="320;380;320" dur="1.4s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Bottom text -->
+  <text x="400" y="600" font-family="'Rajdhani', sans-serif" font-size="48" font-weight="700" fill="url(#neonGradient)" text-anchor="middle" letter-spacing="4">
+    SHDA
+  </text>
+
+  <text x="400" y="640" font-family="'Montserrat', sans-serif" font-size="16" fill="#808080" text-anchor="middle" letter-spacing="2">
+    SCANDINAVIAN HARD DANCE ALLIANCE
+  </text>
+</svg>
