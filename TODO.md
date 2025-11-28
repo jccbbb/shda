@@ -14,8 +14,10 @@ This file contains all the items you need to update with your actual organizatio
   - [ ] hardevents-danmark.png
   - [ ] coretours.png
   - [ ] hardstyle-sweden.png
+  - [ ] another-life-events.png
 - [ ] Update member descriptions with real information
 - [ ] Add actual member websites/links
+- [ ] Update Another Life Events country if not Sweden
 
 ### Contact Information (`/src/pages/kontakt.astro` and `/src/components/Footer.astro`)
 - [ ] Update email addresses:

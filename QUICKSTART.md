@@ -34,6 +34,7 @@ Place PNG logos (transparent background, min 500px width) in `/public/logos/`:
 - hardevents-danmark.png
 - coretours.png
 - hardstyle-sweden.png
+- another-life-events.png
 
 ### 3. Update Contact Information
 

@@ -90,7 +90,7 @@ See `TODO.md` for a complete list of items to customize with your actual organiz
 
 ### Quick Customization Checklist
 
-- [ ] Add member logos to `/public/logos/`
+- [ ] Add member logos to `/public/logos/` (9 organizations)
 - [ ] Update member information in `/src/pages/medlemmar.astro`
 - [ ] Update contact information in `/src/pages/kontakt.astro`
 - [ ] Add real board members in `/src/pages/stadgar.astro`
