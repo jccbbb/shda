@@ -19,8 +19,8 @@ SHDA was born from a simple but powerful idea: **we are stronger together**.
 The alliance launches with eight passionate founding members:
 
 1. **Forced 2 Dance** (Sweden) - Main founder
-2. **EFFEKT** (Norway)
-3. **DAP Events** (Denmark)
+2. **Effekt Events** (Sweden)
+3. **DAP Events** (Sweden)
 4. **Hardstyle DNA** (Finland)
 5. **Resistancefi** (Finland)
 6. **Elusion Events** (Denmark)

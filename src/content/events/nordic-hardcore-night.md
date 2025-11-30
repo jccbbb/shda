@@ -2,7 +2,7 @@
 title: "Nordic Hardcore Night"
 date: "April 22, 2025"
 location: "Oslo, Norway"
-organizer: "EFFEKT"
+organizer: "Effekt Events"
 description: "An intense night of hardcore and frenchcore with the best DJs from Europe. Experience the power of 200+ BPM in Norway's capital."
 link: "#"
 genres: ["hardcore", "frenchcore"]
@@ -15,7 +15,7 @@ Prepare for an intense night of pure hardcore energy! **Nordic Hardcore Night** 
 **Date:** April 22, 2025
 **Location:** [Venue Name], Oslo, Norway
 **Doors Open:** 23:00
-**Organizer:** EFFEKT
+**Organizer:** Effekt Events
 
 ## What to Expect
 
@@ -34,4 +34,4 @@ Coming soon!
 
 ---
 
-*EFFEKT presents: Nordic Hardcore Night*
+*Effekt Events presents: Nordic Hardcore Night*

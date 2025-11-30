@@ -27,7 +27,7 @@ Mid-year review and planning session, with special focus on resource sharing opt
 ### Q3 Meeting - Oslo, Norway
 **Date:** September 12, 2025
 **Location:** Oslo, Norway
-**Host:** EFFEKT
+**Host:** Effekt Events
 
 Autumn planning meeting to coordinate the busy fall and winter season, including year-end events and holiday celebrations.
 
@@ -52,7 +52,7 @@ Each quarterly meeting follows a structured format designed to maximize value fo
 
 All SHDA members are encouraged to attend these meetings. Remote participation options are available for those who cannot attend in person.
 
-For more information about attending meetings, please contact [board@shda.org](mailto:board@shda.org).
+For more information about attending meetings, please contact [hello@shda.org](mailto:hello@shda.org).
 
 ---
 
