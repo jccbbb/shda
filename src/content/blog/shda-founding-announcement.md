@@ -22,7 +22,7 @@ The alliance launches with eight passionate founding members:
 2. **Effekt Events** (Sweden)
 3. **DAP Events** (Sweden)
 4. **Hardstyle DNA** (Finland)
-5. **Resistancefi** (Finland)
+5. **The Resistance** (Finland)
 6. **Hardevents** (Denmark)
 7. **Coretours** (Multi-country)
 8. **Hardstyle Sweden** (Sweden)
