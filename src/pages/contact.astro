@@ -14,117 +14,59 @@ const base = import.meta.env.BASE_URL;
 
   <section>
     <div class="container">
-      <div class="contact-grid">
-        <!-- Contact Form -->
-        <div class="contact-form-section">
-          <h2>Send Us a Message</h2>
-          <p>
-            Fill out the form below and we'll get back to you as soon as possible.
-            For membership applications, please provide details about your organization.
-          </p>
+      <!-- Prominent Email Contact Section -->
+      <div class="email-contact-section">
+        <h2>Contact Us Directly</h2>
+        <p class="intro-text">
+          We'd love to hear from you! Send us an email and we'll get back to you within 48 hours.
+        </p>
 
-          <form class="contact-form" method="POST" action="#">
-            <div class="form-group">
-              <label for="name">Name *</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                placeholder="Your name"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="organization">Organization</label>
-              <input
-                type="text"
-                id="organization"
-                name="organization"
-                placeholder="Your organization (if applicable)"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email *</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                placeholder="your.email@example.com"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="country">Country</label>
-              <select id="country" name="country">
-                <option value="">Select country</option>
-                <option value="sweden">Sweden</option>
-                <option value="denmark">Denmark</option>
-                <option value="norway">Norway</option>
-                <option value="finland">Finland</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="subject">Subject *</label>
-              <select id="subject" name="subject" required>
-                <option value="">Select a subject</option>
-                <option value="membership">Membership Application</option>
-                <option value="collaboration">Collaboration Proposal</option>
-                <option value="event">Event Submission</option>
-                <option value="general">General Inquiry</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Message *</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="6"
-                required
-                placeholder="Tell us about your inquiry..."
-              ></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
+        <div class="email-display">
+          <a href="mailto:hello@shda.org" class="email-link">hello@shda.org</a>
         </div>
 
-        <!-- Contact Information -->
-        <div class="contact-info-section">
-          <h2>Contact Information</h2>
-
-          <div class="info-card">
-            <h3>Email</h3>
-            <p>
-              For all inquiries, please contact us at:<br>
-              <a href="mailto:hello@shda.org">hello@shda.org</a>
-            </p>
-          </div>
-
-          <div class="info-card">
-            <h3>Social Media</h3>
-            <p>Follow us for updates and news:</p>
-            <div class="social-links">
-              <!-- TODO: Add actual social media links -->
-              <a href="#" class="social-link">Facebook</a>
-              <a href="#" class="social-link">Instagram</a>
-              <a href="#" class="social-link">Twitter/X</a>
+        <div class="contact-guidance">
+          <h3>When You Contact Us</h3>
+          <div class="guidance-grid">
+            <div class="guidance-item">
+              <h4>Membership Applications</h4>
+              <p>Include your organization name, location, website, and a brief description of your activities.</p>
+            </div>
+            <div class="guidance-item">
+              <h4>Event Submissions</h4>
+              <p>Provide event name, date, venue, city, lineup information, and ticket link.</p>
+            </div>
+            <div class="guidance-item">
+              <h4>Partnership Proposals</h4>
+              <p>Describe your proposal and how it aligns with SHDA's values and mission.</p>
+            </div>
+            <div class="guidance-item">
+              <h4>General Inquiries</h4>
+              <p>Feel free to ask us anything about the alliance, our members, or hard dance events.</p>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div class="info-card">
-            <h3>Member Organizations</h3>
-            <p>
-              You can also reach out directly to our <a href={`${base}/members`}>member organizations</a>
-              for event-specific inquiries or collaborations.
-            </p>
+      <!-- Contact Information Cards -->
+      <div class="contact-info-cards">
+        <div class="info-card">
+          <h3>Follow Us</h3>
+          <p>Stay updated with the latest news and events:</p>
+          <div class="social-links">
+            <!-- TODO: Add actual social media links -->
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">Instagram</a>
+            <a href="#" class="social-link">Twitter/X</a>
           </div>
+        </div>
+
+        <div class="info-card">
+          <h3>Member Organizations</h3>
+          <p>
+            You can also reach out directly to our <a href={`${base}/members`}>member organizations</a>
+            for event-specific inquiries or collaborations.
+          </p>
         </div>
       </div>
 
@@ -185,37 +127,93 @@ const base = import.meta.env.BASE_URL;
     margin: 0 auto;
   }
 
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: var(--spacing-4xl);
-    margin-bottom: var(--spacing-4xl);
+  .email-contact-section {
+    max-width: 900px;
+    margin: 0 auto var(--spacing-4xl);
+    text-align: center;
   }
 
-  .contact-form-section h2,
-  .contact-info-section h2 {
+  .email-contact-section h2 {
     color: var(--color-accent-cyan);
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: var(--spacing-lg);
   }
 
-  .contact-form-section > p {
-    font-size: 1.0625rem;
+  .intro-text {
+    font-size: 1.125rem;
     line-height: 1.8;
     color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
   }
 
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
+  .email-display {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(157, 0, 255, 0.1) 100%);
+    border: 2px solid var(--color-accent-cyan);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-3xl);
+    margin-bottom: var(--spacing-3xl);
+    transition: all var(--transition-base);
   }
 
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
+  .email-display:hover {
+    border-color: var(--color-accent-purple);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+  }
+
+  .email-link {
+    color: var(--color-text-white);
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: all var(--transition-base);
+    display: inline-block;
+  }
+
+  .email-link:hover {
+    color: var(--color-accent-cyan);
+    transform: scale(1.05);
+  }
+
+  .contact-guidance {
+    margin-top: var(--spacing-3xl);
+    text-align: left;
+  }
+
+  .contact-guidance h3 {
+    color: var(--color-accent-cyan);
+    font-size: 1.75rem;
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .guidance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-xl);
+  }
+
+  .guidance-item h4 {
+    color: var(--color-text-white);
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .guidance-item p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+  }
+
+  .contact-info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-4xl);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .info-card {
@@ -330,9 +328,20 @@ const base = import.meta.env.BASE_URL;
       font-size: 2.5rem;
     }
 
-    .contact-grid {
+    .email-contact-section h2 {
+      font-size: 2rem;
+    }
+
+    .email-link {
+      font-size: 1.5rem;
+    }
+
+    .guidance-grid {
       grid-template-columns: 1fr;
-      gap: var(--spacing-2xl);
+    }
+
+    .contact-info-cards {
+      grid-template-columns: 1fr;
     }
 
     .quick-links-grid {
