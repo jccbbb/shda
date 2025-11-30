@@ -63,7 +63,7 @@ We're excited about the future of hard dance in Scandinavia, and we invite you t
 
 ## Get Involved
 
-Interested in learning more about SHDA or applying for membership? Visit our [contact page](/kontakt) or check out our [membership information](/medlemmar).
+Interested in learning more about SHDA or applying for membership? Visit our [contact page](/contact) or check out our [membership information](/members).
 
 ---
 

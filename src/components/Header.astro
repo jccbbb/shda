@@ -3,13 +3,13 @@ const base = import.meta.env.BASE_URL;
 
 const navItems = [
   { name: 'Home', href: `${base}/` },
-  { name: 'About', href: `${base}/om-oss` },
-  { name: 'Members', href: `${base}/medlemmar` },
-  { name: 'Activities', href: `${base}/verksamhet` },
+  { name: 'About', href: `${base}/about` },
+  { name: 'Members', href: `${base}/members` },
+  { name: 'Activities', href: `${base}/activities` },
   { name: 'Events', href: `${base}/events` },
-  { name: 'News', href: `${base}/nyheter` },
-  { name: 'Bylaws', href: `${base}/stadgar` },
-  { name: 'Contact', href: `${base}/kontakt` }
+  { name: 'News', href: `${base}/news` },
+  { name: 'Bylaws', href: `${base}/bylaws` },
+  { name: 'Contact', href: `${base}/contact` }
 ];
 
 const currentPath = Astro.url.pathname;
