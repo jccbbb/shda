@@ -1,0 +1,2 @@
+- When you receive a path to a file with a Windows like URL ("C:\Users\jacob\Downloads\effekt-events.jpg") then dont forget that we are in WSL so you have to reformat/rewrite the path Linux wise and from the /mnt view perspective to be able to get it
+- Always before starting to code or pushing code - check so no one else has pushed to the repo. If there is new code in repo pull it before start working or before you are pushing.
