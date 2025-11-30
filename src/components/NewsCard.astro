@@ -7,7 +7,6 @@ interface Props {
   image?: string;
 }
 
-const base = import.meta.env.BASE_URL;
 const { title, date, excerpt, slug, image } = Astro.props;
 ---
 
@@ -22,7 +21,7 @@ const { title, date, excerpt, slug, image } = Astro.props;
     <time class="news-date">{date}</time>
     <h3 class="news-title">{title}</h3>
     <p class="news-excerpt">{excerpt}</p>
-    <a href={`${base}/news/${slug}`} class="news-link">
+    <a href={`/news/${slug}`} class="news-link">
       Read More →
     </a>
   </div>

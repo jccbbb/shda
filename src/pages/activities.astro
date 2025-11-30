@@ -1,7 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="Activities" description="Learn about SHDA's activities - quarterly meetings, event collaborations, resource sharing, and community initiatives.">
@@ -197,7 +195,7 @@ const base = import.meta.env.BASE_URL;
           all meetings, collaborations, and resources. If you're a hard dance organizer or
           company in Scandinavia, we'd love to hear from you.
         </p>
-        <a href={`${base}/contact`} class="btn btn-primary">Contact Us</a>
+        <a href={`/contact`} class="btn btn-primary">Contact Us</a>
       </div>
     </div>
   </section>

@@ -2,8 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import MemberCard from '../components/MemberCard.astro';
 
-const base = import.meta.env.BASE_URL;
-
 // TODO: Add actual member logos to /public/logos/
 // TODO: Update member descriptions and websites
 const members = [
@@ -12,70 +10,70 @@ const members = [
     country: 'Sweden',
     description: 'Main founder and leading hard dance event organizer in Sweden. Passionate about bringing the best hardstyle and hardcore events to the Swedish audience.',
     website: 'https://www.instagram.com/forced2dance/',
-    logo: `${base}/logos/forced-2-dance.svg`
+    logo: `/logos/forced-2-dance.svg`
   },
   {
     name: 'Effekt Events',
     country: 'Sweden',
     description: 'Premier hardstyle event organizer bringing the best of hard dance to Sweden with high-quality productions and world-class artists.',
     website: 'https://www.instagram.com/effekt.events/',
-    logo: `${base}/logos/effekt.jpg`
+    logo: `/logos/effekt.jpg`
   },
   {
     name: 'DAP Events',
     country: 'Sweden',
     description: 'Dynamic event organization focused on creating unforgettable hard dance experiences throughout Sweden.',
     website: 'https://dapevent.se/',
-    logo: `${base}/logos/dap-events.png`
+    logo: `/logos/dap-events.png`
   },
   {
     name: 'Hardstyle DNA',
     country: 'Norway',
     description: 'Norway\'s premier hardstyle event brand, dedicated to growing and nurturing the Norwegian hard dance community.',
     website: 'https://www.hardstyle-dna.com/',
-    logo: `${base}/logos/hardstyle-dna.png`
+    logo: `/logos/hardstyle-dna.png`
   },
   {
     name: 'The Resistance',
     country: 'Finland',
     description: 'Finnish hard dance organization committed to bringing diverse hard dance events to the Finnish scene.',
     website: 'https://www.instagram.com/theresistancefi/',
-    logo: `${base}/logos/resistancefi.jpg`
+    logo: `/logos/resistancefi.jpg`
   },
   {
     name: 'Hardevents',
     country: 'Denmark',
     description: 'Danish hard dance event organizer creating immersive festival experiences across multiple hard dance genres.',
     website: 'https://www.instagram.com/hardevents_dk/',
-    logo: `${base}/logos/hardevents.png`
+    logo: `/logos/hardevents.png`
   },
   {
     name: 'Coretours',
     country: 'Multi-country',
     description: 'Leading hard dance bus travel company connecting fans across Scandinavia to the biggest hard dance events in Europe.',
     website: 'https://coretours.se/',
-    logo: `${base}/logos/coretours.svg`
+    logo: `/logos/coretours.svg`
   },
   {
     name: 'Hardstyle Sweden',
     country: 'Sweden',
     description: 'Swedish hardstyle organization dedicated to promoting and growing the hardstyle scene throughout Sweden.',
     website: 'https://hardstylesverige.com/',
-    logo: `${base}/logos/hardstyle-sweden.svg`
+    logo: `/logos/hardstyle-sweden.svg`
   },
   {
     name: 'Another Life Events',
     country: 'Sweden',
     description: 'Hard dance event organizer passionate about creating extraordinary experiences for the Scandinavian hard dance community.',
     website: 'https://www.anotherlifeevents.se/',
-    logo: `${base}/logos/another-life-events-logo.png`
+    logo: `/logos/another-life-events-logo.png`
   },
   {
     name: 'One Vision',
     country: 'Sweden',
     description: 'Hard dance event organizer bringing unity and passion to the Swedish hard dance scene.',
     website: '#',
-    logo: `${base}/logos/one-vision.png`
+    logo: `/logos/one-vision.png`
   }
 ];
 ---
@@ -140,7 +138,7 @@ const members = [
           <li>Entities demonstrating passion for the music and community over pure profit</li>
         </ul>
         <div class="cta-box">
-          <a href={`${base}/contact`} class="btn btn-primary">Apply for Membership</a>
+          <a href={`/contact`} class="btn btn-primary">Apply for Membership</a>
         </div>
       </div>
     </div>

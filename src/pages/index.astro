@@ -4,8 +4,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import EventCard from '../components/EventCard.astro';
 import NewsCard from '../components/NewsCard.astro';
 
-const base = import.meta.env.BASE_URL;
-
 // Fetch all events from content collection
 const allEvents = await getCollection('events');
 
@@ -50,8 +48,8 @@ const latestNews = [
           to promote hard dance music with love and dedication, not just for profit.
         </p>
         <div class="hero-cta">
-          <a href={`${base}/about`} class="btn btn-primary">Learn More About Us</a>
-          <a href={`${base}/contact`} class="btn btn-secondary">Join the Alliance</a>
+          <a href={`/about`} class="btn btn-primary">Learn More About Us</a>
+          <a href={`/contact`} class="btn btn-secondary">Join the Alliance</a>
         </div>
       </div>
     </div>
@@ -106,7 +104,7 @@ const latestNews = [
         Meet the passionate organizers and companies that make up our alliance
       </p>
       <div class="text-center spacer-xl">
-        <a href={`${base}/members`} class="btn btn-primary">View All Members</a>
+        <a href={`/members`} class="btn btn-primary">View All Members</a>
       </div>
     </div>
   </section>
@@ -124,7 +122,7 @@ const latestNews = [
         ))}
       </div>
       <div class="text-center spacer-xl">
-        <a href={`${base}/events`} class="btn btn-primary">See Full Calendar</a>
+        <a href={`/events`} class="btn btn-primary">See Full Calendar</a>
       </div>
     </div>
   </section>
@@ -142,7 +140,7 @@ const latestNews = [
         ))}
       </div>
       <div class="text-center spacer-xl">
-        <a href={`${base}/news`} class="btn btn-primary">Read All News</a>
+        <a href={`/news`} class="btn btn-primary">Read All News</a>
       </div>
     </div>
   </section>
@@ -156,7 +154,7 @@ const latestNews = [
           Are you a hard dance organizer or company in Scandinavia driven by passion for the music?
           Join us in building a stronger, more connected Nordic hard dance community.
         </p>
-        <a href={`${base}/contact`} class="btn btn-primary">Get in Touch</a>
+        <a href={`/contact`} class="btn btn-primary">Get in Touch</a>
       </div>
     </div>
   </section>
