@@ -1,0 +1,10 @@
+name = "shda"
+compatibility_date = "2024-11-01"
+pages_build_output_dir = "./dist"
+# account_id set via CLOUDFLARE_ACCOUNT_ID env var (6570233e690060f50611a6ed458ae7f4)
+
+# Uncomment and set your custom domain when ready
+# [env.production]
+# routes = [
+#   { pattern = "yourdomain.com", custom_domain = true }
+# ]
