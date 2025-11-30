@@ -1,38 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import MemberCard from '../components/MemberCard.astro';
 import EventCard from '../components/EventCard.astro';
 import NewsCard from '../components/NewsCard.astro';
 
 const base = import.meta.env.BASE_URL;
-
-// TODO: Replace with actual member data
-const featuredMembers = [
-  {
-    name: 'Forced 2 Dance',
-    country: 'Sweden',
-    description: 'Main founder and leading hard dance event organizer in Sweden.',
-    website: 'https://www.instagram.com/forced2dance/'
-  },
-  {
-    name: 'Effekt Events',
-    country: 'Sweden',
-    description: 'Premier hardstyle event organizer bringing the best of hard dance to Sweden.',
-    website: 'https://www.instagram.com/effekt.events/'
-  },
-  {
-    name: 'DAP Events',
-    country: 'Sweden',
-    description: 'Dynamic event organization focused on creating unforgettable hard dance experiences.',
-    website: 'https://dapevent.se/'
-  },
-  {
-    name: 'Coretours',
-    country: 'Multi-country',
-    description: 'Leading hard dance bus travel company connecting fans across Scandinavia.',
-    website: 'https://coretours.se/'
-  }
-];
 
 // TODO: Replace with actual event data
 const upcomingEvents = [
@@ -140,13 +111,8 @@ const latestNews = [
     <div class="container">
       <h2 class="text-center">Our Members</h2>
       <p class="section-intro text-center">
-        Meet some of the passionate organizers and companies that make up our alliance
+        Meet the passionate organizers and companies that make up our alliance
       </p>
-      <div class="grid grid-4">
-        {featuredMembers.map((member) => (
-          <MemberCard {...member} />
-        ))}
-      </div>
       <div class="text-center spacer-xl">
         <a href={`${base}/members`} class="btn btn-primary">View All Members</a>
       </div>
